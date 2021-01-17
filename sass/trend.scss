@@ -1,0 +1,121 @@
+@import 'responsive.sсss';
+
+.trend {
+	background-color: #4f73cd;
+	min-height: 100vh;
+	padding-bottom: 135px;
+	&__title {
+		font-size: 36px;
+		line-height: 1.5;
+		color: #fff;
+		padding-top: 36px;
+		padding-bottom: 16px;
+		font-weight: 800;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		padding-bottom: 18px;
+		.trend__box:not(:last-child) {
+			margin-right: 14px;
+		}
+	}
+
+	&__box {
+		cursor: pointer;
+		user-select: none;
+		font-size: 16px;
+		line-height: 1.2;
+		color: #fff;
+		border-radius: 8px;
+		padding: 8px 20px;
+		margin-bottom: 14px;
+		font-weight: 500;
+		transition: 0.3s background-color;
+		&--active {
+			background-color: #80a0f2;
+		}
+
+		&--all {
+			background-color: #a5beff;
+		}
+	}
+	
+	.swiper-slide {
+		position: relative;
+		background: linear-gradient(360deg, rgba(18, 24, 42, 0.6) 0%, rgba(18, 24, 42, 0) 83.2%), var(--image) center center no-repeat;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: 8px;
+		padding: 0 12px;
+		padding-top: 14%;
+		margin-top: 0px !important;
+		margin-bottom: 30px !important;
+		transition: 0.3s border;
+		@include media(lg) {
+			padding-top: 11%;
+		}
+		&:hover {
+			border-radius: 8px 0px 0px 8px; 
+			.trend__subinfo {
+				//opacity: 1;
+				//visibility: visible;
+				//border-radius: 0px 8px 8px 0px;
+			}
+		}
+			
+	}
+
+	.swiper-wrapper {
+		.swiper-slide:nth-child(6n+5),
+		.swiper-slide:nth-child(6n+6) {
+			//border: 2px solid red;
+			&:hover {
+				border-radius: 0 8px 8px 0px;
+				.trend__subinfo {
+					left: auto;
+					right: 100%;
+					border-radius: 8px 0px 0px 8px;
+				}
+			}
+
+		}
+
+		.swiper-button-next .swiper-button-prev {
+			
+		}
+
+
+	}
+
+	&__city,
+	&__country {
+		color: #fff;
+	}
+
+	&__city{
+		padding-bottom: 3px;
+	}
+
+	&__country {
+		padding-bottom: 15px;
+	}
+
+	&__subinfo {
+		position: absolute;
+		z-index: 2;
+		top: 0px;
+		left: 170px;
+		height: 100%;
+		width: calc(100% + 233px);
+		background-color: #254595;
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.3s opacity;
+	}
+}
+
+.hide {
+	display: none;
+}

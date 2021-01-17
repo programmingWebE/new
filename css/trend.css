@@ -1,0 +1,113 @@
+.trend {
+	background-color: #4f73cd;
+	min-height: 100vh;
+	padding-bottom: 135px;
+}
+
+.trend__title {
+	font-size: 36px;
+	line-height: 1.5;
+	color: #fff;
+	padding-top: 36px;
+	padding-bottom: 16px;
+	font-weight: 800;
+}
+
+.trend__list {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 18px;
+}
+
+.trend__list .trend__box:not(:last-child) {
+	margin-right: 14px;
+}
+
+.trend__box {
+	cursor: pointer;
+	user-select: none;
+	font-size: 16px;
+	line-height: 1.2;
+	color: #fff;
+	border-radius: 8px;
+	padding: 8px 20px;
+	margin-bottom: 14px;
+	font-weight: 500;
+	transition: 0.3s background-color;
+}
+
+.trend__box--active {
+	background-color: #80a0f2;
+}
+
+.trend__box--all {
+	background-color: #a5beff;
+}
+
+.trend .swiper-slide {
+	position: relative;
+	background: linear-gradient(360deg, rgba(18, 24, 42, 0.6) 0%, rgba(18, 24, 42, 0) 83.2%), var(--image) center center no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 8px;
+	padding: 0 12px;
+	padding-top: 14%;
+	margin-top: 0px !important;
+	margin-bottom: 30px !important;
+	transition: 0.3s border;
+}
+
+.trend .swiper-slide:hover {
+	border-radius: 8px 0px 0px 8px;
+}
+
+.trend .swiper-wrapper .swiper-slide:nth-child(6n+5):hover,
+.trend .swiper-wrapper .swiper-slide:nth-child(6n+6):hover {
+	border-radius: 0 8px 8px 0px;
+}
+
+.trend .swiper-wrapper .swiper-slide:nth-child(6n+5):hover .trend__subinfo,
+.trend .swiper-wrapper .swiper-slide:nth-child(6n+6):hover .trend__subinfo {
+	left: auto;
+	right: 100%;
+	border-radius: 8px 0px 0px 8px;
+}
+
+.trend__city,
+.trend__country {
+	color: #fff;
+}
+
+.trend__city {
+	padding-bottom: 3px;
+}
+
+.trend__country {
+	padding-bottom: 15px;
+}
+
+.trend__subinfo {
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	left: 170px;
+	height: 100%;
+	width: calc(100% + 233px);
+	background-color: #254595;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.3s opacity;
+}
+
+.hide {
+	display: none;
+}
+
+@media screen and (max-width: 1440px) {
+
+.trend .swiper-slide {
+	padding-top: 11%;
+}
+
+}
+
